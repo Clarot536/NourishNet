@@ -64,7 +64,7 @@ ul li a {
 .content {
     background-color: #d9d9d9;
     border-radius: 30px;
-    height: 90.4vh;
+    height: max(90.4vh, auto);
     width: auto;
     margin: 4px;
 }
