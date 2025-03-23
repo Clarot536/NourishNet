@@ -1,4 +1,4 @@
-# 🌱 NourishNet – Food Waste Management App
+# 🌱 NourishNet – Linking Surplus to Support
 
 ### **🚀 A National-Level Hackathon Project**
 
