@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+
+* {
+    margin: 0px;
+    touch-action: none;
+}
+
+.main {
+    background: transparent;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav {
+    vertical-align: middle;
+    background-color: rgb(62, 65, 65);
+    border-radius: 25px;
+    width: auto;
+    height: 7.5vh;
+    margin: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    padding-left: 100px;
+}
+
+.menu {
+    padding-right: 100px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 62px;
+    font-size: 14px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 30px;
+    width: auto;
+    height: 90.7vh;
+    margin: 4px;
+}
+
+.congrats {
+    position: absolute;
+    top: 30%;
+    width: 550px;
+    height: 100px;
+    padding: 20px 10px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+h1 {
+    color: white;
+    transform-origin: 50% 50%;
+    font-size: 50px;
+    font-family: 'Sigmar One', cursive;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.blob {
+    height: 50px;
+    width: 50px;
+    color: #ffcc00;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 1;
+    font-size: 30px;
+    display: none;
+}
+
+.bcvideo {
+    position: absolute;
+    margin: 5px;
+    border-radius: 30px;
+    top: 7.9vh;
+    width: 99.8%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
