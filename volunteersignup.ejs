@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NourishNet</title>
+    <link rel="stylesheet" href="styles/volunteersignup.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="logo">
+                <h2>NOURISHNET</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href=""><img style="height:30px; width:30px;" src="profile-picture.png" alt="PROFILE"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="form" align="center">
+                <img src="drop.png">
+                <h2>VOLUNTEER SIGNUP</h2>
+                <div align="center">
+                    <form action="volsignup" method="POST">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                        <input type="email" name="email" placeholder="Enter Your Email" required>
+                        <input type="tel" name="mobile" placeholder="Enter Your Mobile Number" required><br>
+                        <label for="govtid">Upload Government ID Proof No : </label>
+                        <input type="text" name="govtId" placeholder="Upload Government ID Proof" required><br>
+                        <input type="password" name="password" placeholder="Create A Password" required><br>
+                        <input type="password" name="cpassword" placeholder="Confirm Password" required>
+                        <div class="btnn">
+                            <button type="submit" class="btn">SIGNUP</button>
+                        </div>
+                    </form>
+
+                    <p class="link">Don't have an account<br>
+                        <a href="/login">Login</a> here
+                    </p><br>
+                    <p class="liw">Sign up with</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

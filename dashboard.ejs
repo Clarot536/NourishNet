@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <h2>NOURISHNET</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/login">LOGIN</a></li>
+                <li><a href=""><img style="height:30px; width:30px;" src="profile-picture.png" alt="PROFILE"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Food Donations</h1>
+        <div class="food-container">
+            <% foodEntries.forEach(food=> { %>
+                <div class="food-card" id="food-<%= food._id %>">
+                    <h2>
+                        <%= food.name %> - <%= food.foodType %>
+                    </h2>
+                    <button onclick="deleteFood('<%= food._id %>')">ACCEPT</button>
+                    <p>Quantity: <%= food.quantity %> persons</p>
+                    <p>Fresh Span: <%= food.freshSpan %> hours</p>
+                    <p>Location: <%= food.locationDescription %>
+                    </p>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+    <script>
+        async function deleteFood(foodId) {
+            if (!confirm("Are you sure you want to accept this food entry?")) return;
+
+            try {
+                const response = await fetch(`/delete-food/${foodId}`, {
+                    method: "DELETE",
+                });
+
+                if (response.ok) {
+                    document.getElementById(`food-${foodId}`).remove(); // Remove from frontend
+                    alert("Food entry accepted successfully!");
+                } else {
+                    alert("Failed to accept food request.\n Please try again");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred while deleting food.");
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

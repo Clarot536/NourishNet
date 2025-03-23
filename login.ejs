@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NourishNet</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="logo">
+                <h2>NOURISHNET</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href=""><img style="height:30px; width:30px;" src="profile-picture.png" alt="PROFILE"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <img src="loginbc.png" style="height: 60%; width: 55%; margin-top: 20%;margin-left: 35%;">
+
+            <!-- Volunteer Login Form -->
+            <div class="vform">
+                <img src="drop.png">
+                <h2>VOLUNTEER LOGIN</h2>
+                <div align="center">
+                    <form action="/login" method="POST" id="volform">
+                        <input type="email" name="email" id="email1" placeholder="Enter Email Here" required>
+                        <input type="password" name="password" id="pass1" placeholder="Enter Password Here" required>
+                        <div class="btnn">
+                            <button type="submit" name="DBtype" value="volunteers" class="btn">Login</button>
+                        </div>
+                    </form>
+                    <p class="link">Don't have an account?<br>
+                        <a href="/vsignup">Sign up</a> here
+                    </p><br>
+                    <p class="liw">Log in with</p>
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organization Login Form -->
+            <div class="form">
+                <img src="drop.png">
+                <h2>ORGANIZATIONS LOGIN</h2>
+                <div align="center">
+                    <form action="/login" method="POST" id="orgform">
+                        <input type="email" name="email" placeholder="Enter Email Here" required>
+                        <input type="password" name="password" placeholder="Enter Password Here" required>
+                        <div class="btnn">
+                            <button type="submit" name="DBtype" value="Organisation" class="btn">Login</button>
+                        </div>
+                    </form>
+                    <p class="link">Don't have an account?<br>
+                        <a href="/osignup">Sign up</a> here
+                    </p><br>
+                    <p class="liw">Log in with</p>
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>

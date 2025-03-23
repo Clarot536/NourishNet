@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NourishNet</title>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="logo">
+                <h2>NOURISHNET</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href=""><img style="height:30px; width:30px;" src="profile-picture.png" alt="PROFILE"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="txt">
+                <h2 id="NOURISHNET">NOURISHNET:</h2>
+                <script type="text/javascript">
+                    var h = 0, msg = "";
+                    function a() {
+                        if (h % 21 == 0) msg = "|";
+                        else if (h % 21 == 1) msg = "N|";
+                        else if (h % 21 == 2) msg = "NO|";
+                        else if (h % 21 == 3) msg = "NOU|";
+                        else if (h % 21 == 4) msg = "NOUR|";
+                        else if (h % 21 == 5) msg = "NOURI|";
+                        else if (h % 21 == 6) msg = "NOURIS|";
+                        else if (h % 21 == 7) msg = "NOURISH|";
+                        else if (h % 21 == 8) msg = "NOURISHN|";
+                        else if (h % 21 == 9) msg = "NOURISHNE|";
+                        else if (h % 21 == 10) msg = "NOURISHNET|";
+                        else if (h % 21 == 11) msg = "NOURISHNET:|";
+                        else if (h % 21 == 12) msg = "NOURISHNE|";
+                        else if (h % 21 == 13) msg = "NOURISHN|";
+                        else if (h % 21 == 14) msg = "NOURISH|";
+                        else if (h % 21 == 15) msg = "NOURIS|";
+                        else if (h % 21 == 16) msg = "NOURI|";
+                        else if (h % 21 == 17) msg = "NOUR|";
+                        else if (h % 21 == 18) msg = "NOU|";
+                        else if (h % 21 == 19) msg = "NO|";
+                        else if (h % 21 == 20) msg = "N|";
+                        document.getElementById("NOURISHNET").innerHTML = "<h2><b>" + msg + "</b></h2>";
+                        h++;
+                        c();
+                    }
+                    function c() {
+                        setTimeout(a, 180);
+                    }
+                    c();
+                </script>
+                <h2>Linking Surplus to Support</h2><br>
+                <p>The idea is to connect restaurants, function halls, hotels, and gatherings with NGOs, orphanages,
+                    old-age homes, and other organizations that can benefit from excess food</p>
+            </div>
+            <img src="homebc.png" style="height: 57%; width: 55%; margin-top: 16%; margin-left: 13%;">
+            <div>
+                <form action="/add-food" method="POST" class="rform" id="foodForm">
+                    <img src="drop.png">
+                    <h2>Food Registration</h2>
+                    <div class="food">
+                        <input type="radio" name="foodType" value="Veg" id="veg" required>
+                        <label for="veg">Veg</label>
+                        <input type="radio" name="foodType" value="Non-Veg" id="non-veg" required>
+                        <label for="non-veg">Non-Veg</label>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" name="quantity" placeholder="QUANTITY (NO OF PERSONS)" required>
+                        <input type="number" name="freshSpan" placeholder="FRESH SPAN (in hours)" min="1" required>
+                    </div>
+                    <div class="details">
+                        <input type="text" name="name" placeholder="NAME" required>
+                        <input type="tel" name="contactNumber" placeholder="ENTER CONTACT NUMBER" required>
+                        <input type="email" name="email" placeholder="ENTER EMAIL ID" required>
+                    </div>
+                    <div class="loc">
+                        <input type="radio" name="locationType" value="Current Location" id="currentloc" required>
+                        <label for="currentloc">CURRENT LOCATION</label>
+                        <input type="radio" name="locationType" value="Custom Location" id="locate" required>
+                    </div>
+                    <div class="locdesc">
+                        <input type="text" id="location-description" name="locationDescription"
+                            placeholder="LOCATION DESCRIPTION">
+                    </div>
+                    <div class="details">
+                        <button type="submit" class="btn" id="fr">REGISTER FOOD</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    document.getElementById('location-description').value = 'Lat: ' + latitude + ', Lon: ' + longitude;
+
+                    document.getElementById('foodForm').dataset.latitude = latitude;
+                    document.getElementById('foodForm').dataset.longitude = longitude;
+
+                    alert('Your current location has been recorded!');
+                }, function (error) {
+                    alert('Error getting location: ' + error.message);
+                });
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        }
+
+        document.getElementById('currentloc').addEventListener('click', getCurrentLocation);
+    </script>
+</body>
+
+</html>
